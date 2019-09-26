@@ -8,6 +8,7 @@
     "d3-ease": "^1.0.3",
     "firebase": "^5.0.4",
     "react": "^16.9.0",
+    "react-browser-router": "^2.1.2",
     "react-dom": "^16.9.0",
     "react-firebase-file-uploader": "^2.4.1",
     "react-move": "^2.7.0",

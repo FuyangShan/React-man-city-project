@@ -29,6 +29,7 @@ class HomeCards extends Component {
     ]
   };
 
+  //create funtion to loop through the cards
   showAnimateCards = () =>
     this.state.cards.map((card, i) => (
       <Animate
@@ -64,6 +65,8 @@ class HomeCards extends Component {
         }}
       </Animate>
     ));
+
+  //later will connect to the database to loop different cards
 
   render() {
     return <div>{this.showAnimateCards()}</div>;

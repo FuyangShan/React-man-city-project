@@ -36,8 +36,8 @@ class Enroll extends Component {
         newElement.value = element.event.target.value;
 
         let validData = validate(newElement);
-        newElement.valid = validData[0];
-        newElement.validationMessage = validData[1];
+        newElement.valid = validData[0]; //this is true/false
+        newElement.validationMessage = validData[1]; //actural message or empty
 
         newFormdata[element.id] = newElement;
 
@@ -48,6 +48,7 @@ class Enroll extends Component {
     }
 
     resetFormSuccess(type) {
+        //type is true or false
         const newFormdata = { ...this.state.formdata };
 
         for (let key in newFormdata) {
@@ -89,8 +90,9 @@ class Enroll extends Component {
                 .equalTo(dataToSubmit.email)
                 .once("value")
                 .then(snapshot => {
+                    //if the email is in the data base or not
                     if (snapshot.val() === null) {
-                        firebasePromotions.push(dataToSubmit);
+                        firebasePromotions.push(dataToSubmit); //push data to submit
                         this.resetFormSuccess(true);
                     } else {
                         this.resetFormSuccess(false);

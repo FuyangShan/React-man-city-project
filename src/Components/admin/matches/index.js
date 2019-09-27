@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AdminLayout from "../../../Hoc/AdminLayout";
 
+//from material-ui table --> any table sample "show the source" --> copy over
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+
+//moving circle from material library "for waiting moment"
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+//connect the matches info from database
 import { firebaseMatches } from "../../../firebase";
 import { firebaseLooper, reverseArray } from "../../ui/misc";
 

@@ -45,8 +45,6 @@ export const reverseArray = actualArray => {
     return reversedArray;
 };
 
-//for the calidation of the promition email
-
 export const validate = element => {
     let error = [true, ""];
 

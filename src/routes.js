@@ -9,11 +9,20 @@ import PublicRoute from "./Components/authRoutes/publicRoutes";
 import Home from "./Components/home";
 import SignIn from "./Components/signin";
 
+//import TheTeam from "./Components/theTeam";
+import TheTeam from "./Components/theTeam";
+import TheMatches from "./Components/theMatches";
+
 //signin page
 import Dashboard from "./Components/admin/Dashboard";
 
+//add funtions about matches
 import AdminMatches from "./Components/admin/matches";
 import AddEditMatch from "./Components/admin/matches/addEditMatch";
+
+//add functions about players
+import AdminPlayers from "./Components/admin/players";
+import AddEditPlayers from "./Components/admin/players/addEditPlayers";
 
 //<Route exact component={Home} path="/" /> means home page
 
@@ -21,6 +30,24 @@ const Routes = props => {
     return (
         <Layout>
             <Switch>
+                <PrivateRoute
+                    {...props}
+                    path="/admin_players/add_players"
+                    exact
+                    component={AddEditPlayers}
+                />
+                <PrivateRoute
+                    {...props}
+                    path="/admin_players/add_players/:id"
+                    exact
+                    component={AddEditPlayers}
+                />
+                <PrivateRoute
+                    {...props}
+                    path="/admin_players"
+                    exact
+                    component={AdminPlayers}
+                />
                 <PrivateRoute
                     {...props}
                     path="/admin_matches/edit_match"
@@ -51,6 +78,20 @@ const Routes = props => {
                     path="/sign_in"
                     exact
                     component={SignIn}
+                />
+                <PublicRoute
+                    {...props}
+                    restricted={false}
+                    path="/the_matches"
+                    exact
+                    component={TheMatches}
+                />
+                <PublicRoute
+                    {...props}
+                    restricted={false}
+                    path="/the_team"
+                    exact
+                    component={TheTeam}
                 />
                 <PublicRoute
                     {...props}

@@ -1,6 +1,5 @@
 import React from "react";
 
-//decide what kind of return after the input
 const FormField = ({ formdata, id, change }) => {
     const showError = () => {
         let errorMessage = (
